@@ -6,21 +6,20 @@ PredictionBuilder is a library for machine learning that builds predictions usin
 Requirements
 ------------
 
-This project requires [Swift 2.2 or higher](https://swift.org).
+This project requires [Swift 3.0 or higher](https://swift.org).
 
 Example
 -------
 
 ```swift
+var data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
+var x: Double = 4.5
+
+// What is the expected y value with the given x value?
 do {
-    var data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
-    var x: Double = 4.5
-    
-    // What is the expected y value with the given x value?
-    var prediction = PredictionBuilder(x: x, data: data)
-    var result = try prediction.build() // y = 76.65   
-    
-} catch Error.ArgumentError(let msg) {
+    var prediction = try PredictionBuilder(x: x, data: data)
+    var result = try prediction.build() // y = 76.65
+} catch ArgumentError.error(let msg) {
     print(msg)
 }
 ```
