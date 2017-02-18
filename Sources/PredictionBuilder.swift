@@ -3,7 +3,7 @@
 //
 // PredictionBuilder - A library for machine learning that builds predictions using a linear regression.
 //
-// Copyright (c) 2016-2017 Denis Simon <denis.v.simon@gmail.com>
+// Copyright (c) 2016 - 2017 Denis Simon <denis.v.simon@gmail.com>
 //
 // Licensed under MIT (https://github.com/denissimon/prediction-builder-swift/blob/master/LICENSE)
 //
@@ -11,7 +11,7 @@
 import Foundation
 
 public enum ArgumentError: Error {
-    case error(msg: String)
+    case general(msg: String)
 }
 
 open class PredictionBuilder {
@@ -22,18 +22,15 @@ open class PredictionBuilder {
     private var xVector = [Double]()
     private var yVector = [Double]()
     
-    public init(x: Double, data: [[Double]]) throws {
+    public init(x: Double, data: [[Double]]) {
         self.x = x
         self.count = data.count
-        self.data = try data
+        self.data = data
             .map ({
-                guard $0.count == 2 else {
-                    throw ArgumentError.error(msg: "Mismatch in the number of x and y in the dataset.")
+                if $0.count == 2 {
+                    xVector.append($0[0])
+                    yVector.append($0[1])
                 }
-                
-                xVector.append($0[0])
-                yVector.append($0[1])
-                
                 return $0
             })
     }
@@ -42,13 +39,17 @@ open class PredictionBuilder {
         return v * v
     }
     
-    /// Sum of the vector values
+    /**
+     Sum of the vector values
+     */
     private func sum(vector: [Double]) -> Double {
         return vector
             .reduce(0, +)
     }
     
-    /// Sum of the vector squared values
+    /**
+     Sum of the vector squared values
+     */
     private func sumSquared(vector: [Double]) -> Double {
         return vector
             .map({
@@ -57,7 +58,9 @@ open class PredictionBuilder {
             .reduce(0, +)
     }
     
-    /// Sum of the product of x and y
+    /**
+     Sum of the product of x and y
+     */
     private func sumXY(data: [[Double]]) -> Double {
         return data
             .map({
@@ -66,13 +69,16 @@ open class PredictionBuilder {
             .reduce(0, +)
     }
     
-    /// The dispersion
-    /// Dv = (Σv² / N) - (Σv / N)²
+    /**
+     The dispersion
+     Dv = (Σv² / N) - (Σv / N)²
+     */
     private func dispersion(v: String) -> Double {
         let sumSquared = [
             "x": { self.sumSquared(vector: self.xVector) },
             "y": { self.sumSquared(vector: self.yVector) }
         ]
+        
         let sum = [
             "x": { self.sum(vector: self.xVector) },
             "y": { self.sum(vector: self.yVector) }
@@ -82,15 +88,19 @@ open class PredictionBuilder {
             square(v: sum[v]!() / Double(count))
     }
     
-    /// The intercept
-    /// a = (ΣY - b(ΣX)) / N
+    /**
+     The intercept
+     a = (ΣY - b(ΣX)) / N
+     */
     private func aIntercept(b: Double) -> Double {
         return (sum(vector: yVector) / Double(count)) -
             (b * (sum(vector: xVector) / Double(count)))
     }
     
-    /// The slope, or the regression coefficient
-    /// b = ((ΣXY / N) - (ΣX / N)(ΣY / N)) / (Σv² / N) - (Σv / N)²
+    /**
+     The slope, or the regression coefficient
+     b = ((ΣXY / N) - (ΣX / N)(ΣY / N)) / (Σv² / N) - (Σv / N)²
+     */
     private func bSlope() -> Double {
         return ((sumXY(data: data) / Double(count)) -
             ((sum(vector: xVector) / Double(count)) *
@@ -98,14 +108,18 @@ open class PredictionBuilder {
             dispersion(v: "x")
     }
     
-    /// The Pearson's correlation coefficient
-    /// Rxy = b * (√Dx / √Dy)
+    /**
+     The Pearson's correlation coefficient
+     Rxy = b * (√Dx / √Dy)
+     */
     private func corCoefficient(b: Double) -> Double {
         return b * (sqrt(dispersion(v: "x")) / sqrt(dispersion(v: "y")))
     }
     
-    /// Creats a linear model that fits the data.
-    /// The resulting equation has the form: h(x) = a + bx
+    /**
+     Creats a linear model that fits the data.
+     The resulting equation has the form: h(x) = a + bx
+     */
     private func createModel(a: Double, b: Double) -> (_ x: Double)->Double {
         return { (x: Double)->Double in
             return a + b*x
@@ -117,17 +131,24 @@ open class PredictionBuilder {
     }
     
     public struct Result {
-        public let ln_model: String
+        public let lnModel: String
         public let cor: Double
         public let x: Double
         public let y: Double
     }
     
-    /// Builds the prediction of the expected value of y with the given x, based on linear regression model.
+    /**
+     Builds a prediction of the expected value of y with the given x, based on linear regression model.
+     */
     open func build() throws -> Result {
-        // Check the number of observations in a given dataset
+        // Check the number of observations
         guard count >= 3 else {
-            throw ArgumentError.error(msg: "The dataset should contain a minimum of 3 observations.")
+            throw ArgumentError.general(msg: "The dataset should contain a minimum of 3 observations.")
+        }
+        
+        // Check the number of x and y
+        guard count == xVector.count else {
+            throw ArgumentError.general(msg: "Mismatch in the number of x and y in the dataset.")
         }
         
         let b = round_(number: bSlope())
@@ -136,7 +157,7 @@ open class PredictionBuilder {
         let y = round_(number: model(x))
         
         return Result(
-            ln_model: "\(a) + \(b)x",
+            lnModel: "\(a) + \(b)x",
             cor: round_(number: corCoefficient(b: b)),
             x: x,
             y: y
