@@ -6,27 +6,44 @@ PredictionBuilder is a library for machine learning that builds predictions usin
 Requirements
 ------------
 
-This project requires [Swift 3.0 or higher](https://swift.org).
+Swift 3.0+
+
+Installation
+------------
+
+#### Swift Package Manager
+
+You can install the library by the [Swift Package Manager](https://swift.org/package-manager). Add this to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .Package(url: "https://github.com/denissimon/prediction-builder-swift.git", majorVersion: 1)
+]
+```
+
+#### Manual
+
+Drag `PredictionBuilder.swift` into your project.
 
 Example
 -------
 
 ```swift
-var data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
-var x: Double = 4.5
+let data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
+let x: Double = 4.5
 
 // What is the expected y value with the given x value?
 do {
-    var prediction = try PredictionBuilder(x: x, data: data)
-    var result = try prediction.build() // y = 76.65
-} catch ArgumentError.error(let msg) {
+    let prediction = PredictionBuilder(x: x, data: data)
+    let result = try prediction.build() // y = 76.65
+} catch ArgumentError.general(let msg) {
     print(msg)
 }
 ```
 
-The returned struct has the following properties:
+The returned instance has the following properties:
 
-`result.ln_model` linear model that fits the data: "29.56362+10.46364x"
+`result.lnModel` linear model that fits the data: "29.56362+10.46364x"
 
 `result.cor` correlation coefficient: 0.8348
 
