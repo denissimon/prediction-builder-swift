@@ -20,7 +20,7 @@ use_frameworks!
 pod 'PredictionBuilder'
 ```
 
-Then, run `pod install`
+Then, run `pod install` (or `pod update`).
 
 #### Swift Package Manager
 
