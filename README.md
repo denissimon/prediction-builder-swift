@@ -11,9 +11,20 @@ Swift 3.0+
 Installation
 ------------
 
+#### CocoaPods
+
+To install the library using [CocoaPods](https://cocoapods.org), add it to your `Podfile`:
+
+```ruby
+use_frameworks!
+pod 'PredictionBuilder'
+```
+
+Then, run `pod install`
+
 #### Swift Package Manager
 
-You can install the library by the [Swift Package Manager](https://swift.org/package-manager). Add this to your `Package.swift` file:
+To install the library using the [Swift Package Manager](https://swift.org/package-manager), add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
@@ -29,6 +40,8 @@ Example
 -------
 
 ```swift
+import PredictionBuilder
+
 let data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
 let x: Double = 4.5
 
