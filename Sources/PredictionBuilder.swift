@@ -132,13 +132,17 @@ open class PredictionBuilder {
     
     public struct Result {
         public let lnModel: String
-        public let cor: Double
-        public let x: Double
-        public let y: Double
+        public let cor, x, y: Double
+        public init(lnModel: String, cor: Double, x: Double, y: Double) {
+            self.lnModel = lnModel
+            self.cor = cor
+            self.x = x
+            self.y = y
+        }
     }
     
     /**
-     Builds a prediction of the expected value of y with the given x, based on linear regression model.
+     Builds a prediction of the expected value of y for a given x, based on a linear regression model.
      */
     open func build() throws -> Result {
         // Check the number of observations
@@ -157,7 +161,7 @@ open class PredictionBuilder {
         let y = round_(number: model(x))
         
         return Result(
-            lnModel: "\(a) + \(b)x",
+            lnModel: "\(a)+\(b)x",
             cor: round_(number: corCoefficient(b: b)),
             x: x,
             y: y
