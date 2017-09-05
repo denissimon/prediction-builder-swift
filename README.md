@@ -34,7 +34,7 @@ dependencies: [
 
 #### Manual
 
-Drag `PredictionBuilder.swift` into your project.
+Simply drag `PredictionBuilder.swift` into your project.
 
 Example
 -------
@@ -45,11 +45,11 @@ import PredictionBuilder
 let data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
 let x: Double = 4.5
 
-// What is the expected y value with the given x value?
+// What is the expected y value for a given x value?
 do {
     let prediction = PredictionBuilder(x: x, data: data)
     let result = try prediction.build() // y = 76.65
-} catch ArgumentError.general(let msg) {
+} catch let msg {
     print(msg)
 }
 ```
