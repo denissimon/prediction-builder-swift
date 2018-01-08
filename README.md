@@ -22,6 +22,16 @@ pod 'PredictionBuilder'
 
 Then, run `pod install` (or `pod update`).
 
+#### Carthage
+
+To install the library using [Carthage](https://github.com/Carthage/Carthage), add it to your `Cartfile`:
+
+```
+github "denissimon/prediction-builder-swift"
+```
+
+Run `carthage update` to build the framework and drag the built `PredictionBuilder.framework` into your project.
+
 #### Swift Package Manager
 
 To install the library using the [Swift Package Manager](https://swift.org/package-manager), add it to your `Package.swift` file:
