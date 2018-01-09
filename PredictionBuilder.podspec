@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'PredictionBuilder'
-  s.version      = '1.0.1'
+  s.version      = '1.0.2'
   s.homepage     = 'https://github.com/denissimon/prediction-builder-swift'
   s.authors      = {
     'Denis Simon' => 'denis.v.simon@gmail.com'
