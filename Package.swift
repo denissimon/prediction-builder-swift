@@ -1,5 +1,6 @@
 import PackageDescription
 
 let package = Package(
-    name: "PredictionBuilder"
+    name: "PredictionBuilder",
+    exclude: ["Tests"]
 )
