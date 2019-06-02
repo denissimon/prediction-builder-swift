@@ -1,17 +1,27 @@
 //
 // PredictionBuilder.swift
+// https://github.com/denissimon/prediction-builder-swift
 //
-// PredictionBuilder - A library for machine learning that builds predictions using a linear regression.
+// Created by Denis Simon on 12/27/2016
 //
-// Copyright (c) 2016 - 2017 Denis Simon <denis.v.simon@gmail.com>
-//
-// Licensed under MIT (https://github.com/denissimon/prediction-builder-swift/blob/master/LICENSE)
+// MIT License
 //
 
 import Foundation
 
 public enum ArgumentError: Error {
     case general(msg: String)
+}
+
+public struct PredictionResult {
+    public let lnModel: String
+    public let cor, x, y: Double
+    public init(lnModel: String, cor: Double, x: Double, y: Double) {
+        self.lnModel = lnModel
+        self.cor = cor
+        self.x = x
+        self.y = y
+    }
 }
 
 open class PredictionBuilder {
@@ -130,21 +140,10 @@ open class PredictionBuilder {
         return round(100000 * number) / 100000
     }
     
-    public struct Result {
-        public let lnModel: String
-        public let cor, x, y: Double
-        public init(lnModel: String, cor: Double, x: Double, y: Double) {
-            self.lnModel = lnModel
-            self.cor = cor
-            self.x = x
-            self.y = y
-        }
-    }
-    
     /**
      Builds a prediction of the expected value of y for a given x, based on a linear regression model.
      */
-    open func build() throws -> Result {
+    public func build() throws -> PredictionResult {
         // Check the number of observations
         guard count >= 3 else {
             throw ArgumentError.general(msg: "The dataset should contain a minimum of 3 observations.")
@@ -160,7 +159,7 @@ open class PredictionBuilder {
         let model = createModel(a: a, b: b)
         let y = round_(number: model(x))
         
-        return Result(
+        return PredictionResult(
             lnModel: "\(a)+\(b)x",
             cor: round_(number: corCoefficient(b: b)),
             x: x,

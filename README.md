@@ -3,38 +3,28 @@ PredictionBuilder
 
 PredictionBuilder is a library for machine learning that builds predictions using a linear regression.
 
-Requirements
-------------
-
-Swift 3.0+
-
 Installation
 ------------
 
 #### CocoaPods
 
-To install the library using [CocoaPods](https://cocoapods.org), add it to your `Podfile`:
+To install PredictionBuilder using [CocoaPods](https://cocoapods.org), add this line to your `Podfile`:
 
 ```ruby
-use_frameworks!
 pod 'PredictionBuilder'
 ```
 
-Then, run `pod install` (or `pod update`).
-
 #### Carthage
 
-To install the library using [Carthage](https://github.com/Carthage/Carthage), add it to your `Cartfile`:
+To install PredictionBuilder using [Carthage](https://github.com/Carthage/Carthage), add this line to your `Cartfile`:
 
 ```
 github "denissimon/prediction-builder-swift"
 ```
 
-Run `carthage update` to build the framework and drag the built `PredictionBuilder.framework` into your project.
-
 #### Swift Package Manager
 
-To install the library using the [Swift Package Manager](https://swift.org/package-manager), add it to your `Package.swift` file:
+To install PredictionBuilder using [Swift Package Manager](https://swift.org/package-manager), add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
@@ -42,9 +32,9 @@ dependencies: [
 ]
 ```
 
-#### Manual
+#### Manually
 
-Simply drag `PredictionBuilder.swift` into your project.
+Drag `PredictionBuilder.swift` anywhere in your project.
 
 Example
 -------
@@ -77,4 +67,4 @@ The returned instance has the following properties:
 License
 -------
 
-Licensed under the [MIT license](https://github.com/denissimon/prediction-builder-swift/blob/master/LICENSE)
+Licensed under the [MIT License](https://github.com/denissimon/prediction-builder-swift/blob/master/LICENSE)
