@@ -26,11 +26,11 @@ public struct PredictionResult {
 
 open class PredictionBuilder {
     
-    private var x: Double
-    private var count: Int
-    private var data = [[Double]]()
-    private var xVector = [Double]()
-    private var yVector = [Double]()
+    public private(set) var x = Double()
+    public private(set) var count = Int()
+    public private(set) var xVector = [Double]()
+    public private(set) var yVector = [Double]()
+    public private(set) var data = [[Double]]()
     
     public init(x: Double, data: [[Double]]) {
         self.x = x
