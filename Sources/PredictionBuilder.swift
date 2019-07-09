@@ -32,17 +32,31 @@ open class PredictionBuilder {
     public private(set) var yVector = [Double]()
     public private(set) var data = [[Double]]()
     
+    public init() {}
+    
     public init(x: Double, data: [[Double]]) {
+        set(x: x, data: data)
+    }
+    
+    /**
+     Sets / overrides instance properties
+     */
+    public func set(x: Double, data: [[Double]]? = nil) {
         self.x = x
-        self.count = data.count
-        self.data = data
-            .map ({
-                if $0.count == 2 {
-                    xVector.append($0[0])
-                    yVector.append($0[1])
-                }
-                return $0
-            })
+        
+        if let data = data {
+            self.count = data.count
+            self.xVector = []
+            self.yVector = []
+            self.data = data
+                .map ({
+                    if $0.indices.contains(0) && $0.indices.contains(1) {
+                        self.xVector.append($0[0])
+                        self.yVector.append($0[1])
+                    }
+                    return $0
+                })
+        }
     }
     
     private func square(v: Double) -> Double {
