@@ -45,12 +45,13 @@ import PredictionBuilder
 let data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
 let x: Double = 4.5
 
-let pb = PredictionBuilder()
-pb.set(x: x, data: data)
+let prediction = PredictionBuilder()
+
+prediction.set(x: x, data: data)
 
 // What is the expected y value for a given x value?
 do {
-    let result = try pb.build() // y = 76.65
+    let result = try prediction.build() // y = 76.65
 } catch let msg {
     print(msg)
 }
