@@ -2,9 +2,8 @@
 //  PredictionBuilder.h
 //  PredictionBuilder
 //
-//  Created by Denis Simon on 29/09/17.
-//  Copyright © 2017 Denis Simon. All rights reserved.
-//
+//  Created by Denis Simon on 09/29/2017.
+//  Copyright © 2017 PredictionBuilder. All rights reserved.
 
 #import <UIKit/UIKit.h>
 

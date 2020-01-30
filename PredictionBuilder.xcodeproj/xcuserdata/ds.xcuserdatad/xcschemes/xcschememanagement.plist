@@ -4,20 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PredictionBuilder.xcscheme_^#shared#^_</key>
+		<key>PredictionBuilder iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PredictionBuilder macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>PredictionBuilder tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>PredictionBuilder watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>PredictionBuilderTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>41042CCF2002EB0F00787AAB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>41042CD82002EB1000787AAB</key>
+		<key>41F1ACE423E39879007ABFCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
