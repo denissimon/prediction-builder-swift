@@ -1,6 +1,9 @@
 PredictionBuilder
 =================
 
+[![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
+[![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg)](https://developer.apple.com/swift/)
+
 PredictionBuilder is a library for machine learning that builds predictions using a linear regression.
 
 Installation
