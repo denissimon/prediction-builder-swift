@@ -3,8 +3,7 @@
 // https://github.com/denissimon/prediction-builder-swift
 //
 // Created by Denis Simon on 12/27/2016
-//
-// MIT License
+// Copyright © 2016 PredictionBuilder. All rights reserved.
 //
 
 import Foundation
