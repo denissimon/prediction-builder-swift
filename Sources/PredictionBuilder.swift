@@ -1,9 +1,9 @@
 //
-// PredictionBuilder.swift
-// https://github.com/denissimon/prediction-builder-swift
+//  PredictionBuilder.swift
+//  https://github.com/denissimon/prediction-builder-swift
 //
-// Created by Denis Simon on 12/27/2016
-// Copyright © 2016 PredictionBuilder. All rights reserved.
+//  Created by Denis Simon on 12/27/2016
+//  Copyright © 2016 PredictionBuilder. All rights reserved.
 //
 
 import Foundation
