@@ -5,7 +5,7 @@
 //  Created by Denis Simon on 09/29/2017.
 //  Copyright © 2017 PredictionBuilder. All rights reserved.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for PredictionBuilder.
 FOUNDATION_EXPORT double PredictionBuilderVersionNumber;
