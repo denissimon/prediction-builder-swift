@@ -6,32 +6,56 @@
 	<dict>
 		<key>PredictionBuilder iOS.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>PredictionBuilder macOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>PredictionBuilder tvOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>PredictionBuilder watchOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>PredictionBuilderTests.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>41F1ACA023E3367A007ABFCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41F1ACAE23E37546007ABFCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41F1ACBB23E37587007ABFCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41F1ACC823E3765F007ABFCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>41F1ACE423E39879007ABFCC</key>
 		<dict>
 			<key>primary</key>
