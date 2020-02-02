@@ -14,7 +14,7 @@ Installation
 To install PredictionBuilder using [CocoaPods](https://cocoapods.org), add this line to your `Podfile`:
 
 ```ruby
-pod 'PredictionBuilder'
+pod 'PredictionBuilder', '~> 1.1.1'
 ```
 
 #### Carthage
