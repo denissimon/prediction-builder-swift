@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ArgumentError: Error {
+public enum ArgumentError: Error, Equatable {
     case general(msg: String)
 }
 
