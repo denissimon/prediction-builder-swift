@@ -10,25 +10,53 @@ import XCTest
 import PredictionBuilder
 
 class PredictionBuilderTests: XCTestCase {
-
+    
+    var prediction: PredictionBuilder!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        prediction = PredictionBuilder()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetResult() {
+        let data: [[Double]] = [[1,20],[2,70],[2,45],[3,81],[5,73],[6,80],[7,110]]
+        
+        prediction.set(x: 4.5, data: data)
+        var result = try! prediction.build()
+        XCTAssertEqual(result.lnModel, "29.56362+10.46364x")
+        XCTAssertEqual(result.y, 76.65)
+        XCTAssertEqual(result.cor, 0.8348)
+        
+        prediction.set(x: 8)
+        result = try! prediction.build()
+        XCTAssertEqual(result.lnModel, "29.56362+10.46364x")
+        XCTAssertEqual(result.y, 113.27274)
+        XCTAssertEqual(result.cor, 0.8348)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testException() {
+        var data = [[Double]]()
+        
+        data = [[1,20],[2,70]]
+        prediction.set(x: 4.5, data: data)
+        XCTAssertThrowsError(try prediction.build()) { error in
+            XCTAssertEqual(error as? ArgumentError, ArgumentError.general(msg: "The dataset should contain a minimum of 3 observations."))
+        }
+        
+        data = [[1,20],[2,70],[2],[3,81],[5,73],[6,80],[7,110]]
+        prediction.set(x: 4.5, data: data)
+        XCTAssertThrowsError(try prediction.build()) { error in
+            XCTAssertEqual(error as? ArgumentError, ArgumentError.general(msg: "Mismatch in the number of x and y in the dataset."))
+        }
+        
+        data = [[1,20],[2,70],[],[3,81],[5,73],[6,80],[7,110]]
+        prediction.set(x: 4.5, data: data)
+        XCTAssertThrowsError(try prediction.build()) { error in
+            XCTAssertEqual(error as? ArgumentError, ArgumentError.general(msg: "Mismatch in the number of x and y in the dataset."))
         }
     }
-
 }
