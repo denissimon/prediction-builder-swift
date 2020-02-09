@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'PredictionBuilder'
-  s.version      = '1.1.1'
+  s.version      = '1.1.2'
   s.homepage     = 'https://github.com/denissimon/prediction-builder-swift'
   s.author      = { 'Denis Simon' => 'denis.v.simon@gmail.com' }
   s.summary      = 'A library for machine learning that builds predictions using a linear regression.'
