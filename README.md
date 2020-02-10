@@ -1,7 +1,7 @@
 PredictionBuilder
 =================
 
-[![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat)](https://swift.org)
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg)](https://developer.apple.com/swift/)
 
 PredictionBuilder is a library for machine learning that builds predictions using a linear regression.
@@ -14,7 +14,7 @@ Installation
 To install PredictionBuilder using [CocoaPods](https://cocoapods.org), add this line to your `Podfile`:
 
 ```ruby
-pod 'PredictionBuilder', '~> 1.1.2'
+pod 'PredictionBuilder', '~> 1.2.0'
 ```
 
 #### Carthage
@@ -37,7 +37,7 @@ dependencies: [
 
 #### Manually
 
-Drag `PredictionBuilder.swift` anywhere in your project.
+Copy `PredictionBuilder.swift` into your project.
 
 Example
 -------

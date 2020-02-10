@@ -6,8 +6,6 @@
 	<dict>
 		<key>PredictionBuilder iOS.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>isShown</key>
-			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
@@ -36,27 +34,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>41F1ACA023E3367A007ABFCC</key>
+		<key>414D0D4023F0A69A00D779D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41F1ACAE23E37546007ABFCC</key>
+		<key>414D0D6823F0A79B00D779D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41F1ACBB23E37587007ABFCC</key>
+		<key>414D0D7523F0A7D400D779D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41F1ACC823E3765F007ABFCC</key>
+		<key>414D0D8223F0A80700D779D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41F1ACE423E39879007ABFCC</key>
+		<key>414D0D9E23F0AB2D00D779D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
