@@ -1,7 +1,7 @@
 PredictionBuilder
 =================
 
-[![Swift](https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg)](https://developer.apple.com/swift/)
 
 PredictionBuilder is a library for machine learning that builds predictions using a linear regression.
@@ -9,30 +9,29 @@ PredictionBuilder is a library for machine learning that builds predictions usin
 Installation
 ------------
 
+#### Swift Package Manager
+
+To install PredictionBuilder using [Swift Package Manager](https://swift.org/package-manager):
+
+```txt
+Xcode: File -> Add Packages
+Enter Package URL: https://github.com/denissimon/prediction-builder-swift
+```
+
 #### CocoaPods
 
 To install PredictionBuilder using [CocoaPods](https://cocoapods.org), add this line to your `Podfile`:
 
 ```ruby
-pod 'PredictionBuilder', '~> 1.2.0'
+pod 'PredictionBuilder', '~> 1.2'
 ```
 
 #### Carthage
 
 To install PredictionBuilder using [Carthage](https://github.com/Carthage/Carthage), add this line to your `Cartfile`:
 
-```
+```ruby
 github "denissimon/prediction-builder-swift"
-```
-
-#### Swift Package Manager
-
-To install PredictionBuilder using [Swift Package Manager](https://swift.org/package-manager), add the following to your `Package.swift`:
-
-```swift
-dependencies: [
-    .Package(url: "https://github.com/denissimon/prediction-builder-swift.git", majorVersion: 1)
-]
 ```
 
 #### Manually
