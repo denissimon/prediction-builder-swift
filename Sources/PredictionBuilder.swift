@@ -13,7 +13,7 @@ public enum ArgumentError: Error, Equatable {
     case general(msg: String)
 }
 
-public struct PredictionResult {
+public struct PredictionResult: Sendable {
     public let lnModel: String
     public let cor, x, y: Double
     public init(lnModel: String, cor: Double, x: Double, y: Double) {
@@ -24,6 +24,7 @@ public struct PredictionResult {
     }
 }
 
+@preconcurrency
 open class PredictionBuilder {
     
     public private(set) var x = Double()

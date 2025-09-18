@@ -1,8 +1,7 @@
 PredictionBuilder
 =================
 
-[![Swift](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
-[![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg)](https://developer.apple.com/swift/)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdenissimon%2Fprediction-builder-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/denissimon/prediction-builder-swift) [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdenissimon%2Fprediction-builder-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/denissimon/prediction-builder-swift)
 
 PredictionBuilder is a library for machine learning that builds predictions using a linear regression.
 
@@ -11,10 +10,18 @@ Installation
 
 #### Swift Package Manager
 
-To install PredictionBuilder using [Swift Package Manager](https://swift.org/package-manager):
+To install PredictionBuilder using [Swift Package Manager](https://swift.org/package-manager), add the following in your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/denissimon/prediction-builder-swift.git", from: "1.2.2")
+]
+```
+
+Or through Xcode:
 
 ```txt
-Xcode: File -> Add Packages
+File -> Add Package Dependencies
 Enter Package URL: https://github.com/denissimon/prediction-builder-swift
 ```
 
